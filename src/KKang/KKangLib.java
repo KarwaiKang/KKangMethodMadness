@@ -44,5 +44,29 @@ public class KKangLib {
 
     // Math Methods
 
+    public static boolean isFibonacci(int num) {
+        int previous2 = 0;
+        int previous = 1;
+        int current = 1;
 
+        while (current < num) {
+            current = previous + previous2;
+            previous2 = previous;
+            previous = current;
+
+            if (current == num)
+                return true;
+        }
+
+        return false;
+    }
+
+    public static void multiplicationTable(int base, int range) {
+        for (int i = 0; i <= range; i++)
+            System.out.print(base * i + " ");
+    }
+
+    public static int sumUpTo(int n) {
+        return (n * (n + 1)) / 2;
+    }
 }
