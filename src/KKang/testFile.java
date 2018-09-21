@@ -1,6 +1,6 @@
 package KKang;
 
-public class Main {
+public class testFile {
 
     public static void main(String[] args) {
 	    System.out.println(KKangLib.isPalindrome("racecar"));
@@ -30,5 +30,7 @@ public class Main {
         System.out.println(KKangLib.sumUpTo(5));
         System.out.println(KKangLib.sumUpTo(8));
         System.out.println(KKangLib.sumUpTo(58));
+
+        KKangLib.primePrinter(25);
     }
 }

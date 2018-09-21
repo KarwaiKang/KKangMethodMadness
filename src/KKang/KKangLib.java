@@ -1,29 +1,31 @@
 package KKang;
 
 public class KKangLib {
+
+    // String Methods
+
     public static boolean isPalindrome(String str) {
-        for (int i = 0; i < str.length()/2; i++) {
-            if (!str.substring(i,i+1).equals(str.substring(str.length()-1-i,str.length()-i))) {
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (!str.substring(i, i + 1).equals(str.substring(str.length() - 1 - i, str.length() - i)))
                 return false;
-            }
         }
 
         return true;
     }
 
     public static String dateStr(String str) {
-        return str.substring(3,5) + " - " + str.substring(0,2) + " - " + str.substring(6);
+        return str.substring(3, 5) + " - " + str.substring(0, 2) + " - " + str.substring(6);
     }
 
     public static String cutOut(String mainStr, String subStr) {
-        int index = mainStr.indexOf(subStr);
+        int i = mainStr.indexOf(subStr);
         String result = mainStr;
 
-        if (index != -1) {
-            result = mainStr.substring(0, index);
+        if (i != -1) {
+            result = mainStr.substring(0, i);
 
-            if (index != mainStr.length()-3)
-                result += mainStr.substring(index+subStr.length());
+            if (i != mainStr.length() - 3)
+                result += mainStr.substring(i + subStr.length());
         }
 
         return result;
@@ -68,5 +70,25 @@ public class KKangLib {
 
     public static int sumUpTo(int n) {
         return (n * (n + 1)) / 2;
+    }
+
+    public static void primePrinter(int num) {
+        int primes = 0;
+
+        for (int n = 2; primes < num; n++) {
+            boolean prime = true;
+
+            for (int i = 2; i < Math.sqrt(n) + 1; i++) {
+                if (n % i == 0 && n != 2) {
+                    prime = false;
+                    break;
+                }
+            }
+
+            if (prime) {
+                System.out.print(n + " ");
+                primes++;
+            }
+        }
     }
 }
