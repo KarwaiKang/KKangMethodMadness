@@ -91,4 +91,14 @@ public class KKangLib {
             }
         }
     }
+
+    public static String quadSolver(double a, double b, double c) {
+        double plusRoot = (-b + Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
+        double minusRoot = (-b - Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
+
+        if (Double.isNaN(plusRoot))
+            return "imaginary.";
+
+        return String.valueOf(plusRoot + ", " + minusRoot);
+    }
 }
